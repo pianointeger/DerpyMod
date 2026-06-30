@@ -1,8 +1,6 @@
 function getBlockColor(blocker) {
 
-
   let blockerColor;
-
 
   let colorList = ["purple", "red", "light_blue", "lime", "orange", "yellow", "white", "green", "blue", "black", "brown", "magenta"];
   for (let i = 0; i < colorList.length; i++) {
@@ -16,16 +14,12 @@ function getBlockColor(blocker) {
   }
   return blockerColor;
 
-
-} // so this functiion checks if the block name contains any color from the colorList array and "glass". If it does, it returns the color. If not, it returns "none". It makes sure that the block is also a glass.
+}
 function getGemstoneType(blockColor1) {
-
 
   let gemstoneType;
 
-
   switch(blockColor1) {
-
 
     case "purple":
       gemstoneType = "amethyst";
@@ -64,7 +58,6 @@ function getGemstoneType(blockColor1) {
       gemstoneType = "jasper";
       break;
 
-
     default:
       gemstoneType = "none";
       break;
@@ -75,9 +68,7 @@ function getGemstoneType(blockColor1) {
 }
 function getHardness(gemType1) {
 
-
   let hardness;
-
 
   switch(gemType1) {
     case "amethyst":
@@ -122,7 +113,6 @@ function getHardness(gemType1) {
   }
   return hardness;
 
-
 }
 
 
@@ -130,8 +120,8 @@ function calculateTicks(paramHardness, paramMiningSpeed) {
  
   let ticks;
  
-  if (paramHardness != 0){// if the hardness is 0, it means the block is not a gemstone glass, so we don't need to calculate ticks. idk if it matter.
-    ticks = Math.ceil((paramHardness*30)/paramMiningSpeed); // this is the formula to calculate the ticks to break a block.
+  if (paramHardness != 0){
+    ticks = Math.ceil((paramHardness*30)/paramMiningSpeed); 
     if (ticks % 1 < 0.5) {
       ticks = Math.floor(ticks);
     }
@@ -141,12 +131,10 @@ function calculateTicks(paramHardness, paramMiningSpeed) {
     return ticks;
   }
 
-
 }
 
 
-//green is peridot
-//make sure that the the method to get the mining speed is also having its value being updated every time it is changed
+
 export { getBlockColor }
 export { getGemstoneType }
 export { getHardness }
